@@ -35,6 +35,8 @@ public class Startup
     services.AddScoped<AccountService>();
     services.AddScoped<CarsRepository>();
     services.AddScoped<CarsService>();
+    services.AddScoped<HousesRepository>();
+    services.AddScoped<HousesService>();
     // no need to ad the IDb from the repo cause it's already here
   }
 

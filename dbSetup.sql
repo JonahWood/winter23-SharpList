@@ -17,7 +17,26 @@ CREATE TABLE IF NOT EXISTS cars(
   imgUrl VARCHAR(255) NOT NULL,
   color VARCHAR(15)
 )default charset utf8 COMMENT '';
-DROP table IF EXISTS cars;
+
+CREATE TABLE IF NOT EXISTS houses(
+  id INT AUTO_INCREMENT  PRIMARY KEY,
+  bedrooms INT NOT NULL,
+  bathrooms INT NOT NULL,
+  year INT NOT NULL DEFAULT 2025,
+  price DOUBLE NOT NULL DEFAULT 1.00,
+  description TEXT,
+  imgUrl VARCHAR(255) NOT NULL
+)default charset utf8;
+
+INSERT INTO houses
+(bedrooms, bathrooms, description, imgUrl, price, year)
+VALUES
+(2,2,'its', 'https://www.cnet.com/a/img/resize/0f06571d98e478682454ee14e0a2a8c47cf11bc9/hub/2019/11/01/bf19e904-80c3-4b12-997a-a180557504b3/01-2020-honda-cr-v-dream-build-by-jsport-for-2019-sema-show.jpg?auto=webp&width=1200', 300, 1988);
+
+
+
+
+DROP table houses;
 
 -- ALTER TABLE cars
 -- MODIFY COLUMN id
@@ -40,7 +59,7 @@ SELECT
 FROM cars
 WHERE make LIKE '%r%' OR description LIKE '%speed%';
 
-SELECT * FROM cars;
+SELECT * FROM houses;
 
 DELETE FROM cars WHERE make LIKE '&truck&';
 
